@@ -26,3 +26,4 @@ task main()
 		setMotorSpeed(rightMotor, speed); // движение вперед - правый мотор
 	}
 }
+//
