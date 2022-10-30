@@ -2,6 +2,22 @@
 
 <ProgrammingBlock type="loop" loopType="RepeatForever"/>
 
+<ProgrammingBlock type="functionCall" function="displaySensorValues">
+    <Parameters>
+        <Parameter name="lineNumber" type="base typedef" default="line1" typeDef="tIQLCDLine">line1</Parameter>
+        <Parameter name="nDeviceIndex" type="base typedef" default="port1" typeDef="tSensors">colorDetector</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="lineTrackLeft">
+    <Parameters>
+        <Parameter name="sensorName" type="base typedef" default="port1" typeDef="tSensors">colorDetector</Parameter>
+        <Parameter name="threshold" type="short" default="50">175</Parameter>
+        <Parameter name="speedPrimary" type="short" default="50">50</Parameter>
+        <Parameter name="speedSecondary" type="short" default="0">0</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
 <ProgrammingBlock type="end"/>
 
 <RobotConfiguration>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
@@ -31,6 +47,8 @@
 task main()
 {
 	repeat (forever) {
+		displaySensorValues(line1, colorDetector);
+		lineTrackLeft(colorDetector, 175, 50, 0);
 	}
 }
 </CSource>
