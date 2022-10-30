@@ -36,7 +36,7 @@
     <Parameters>
         <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
         <Parameter name="operator" type="typedef">&gt;</Parameter>
-        <Parameter name="RHS" type="short">distance</Parameter>
+        <Parameter name="RHS" type="float">distance</Parameter>
     </Parameters>
 </ProgrammingBlock>
 
