@@ -17,8 +17,8 @@ int pin_rotate = A11;  // analog pin used to connect the potentiometer
 int val_claw,val_rotate;    // variable to read the value from the analog pin
 
 void setup() {
-  myservo_claw.attach(9);  // attaches the servo on pin 9 to the servo object
-  myservo_rotate.attach(8);  // attaches the servo on pin 9 to the servo object
+  myservo_claw.attach(5);  // attaches the servo on pin 9 to the servo object
+  myservo_rotate.attach(6);  // attaches the servo on pin 9 to the servo object
 }
 
 void loop() {
