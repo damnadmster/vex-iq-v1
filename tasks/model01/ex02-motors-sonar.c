@@ -1,8 +1,9 @@
 #pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, PIDControl, driveLeft, encoder)
 #pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
-#pragma config(Sensor, port7,  distanceSensor, sensorVexIQ_Distance)
+#pragma config(Sensor, port9,  distanceSensor, sensorVexIQ_Distance)
 /*------------------------------------------------------------------------------------------------
-Движение вперед, детектор препятствия
+Движение вперед, детектор препятствия, изменение скорости при приближении к препятствию
+model robot: images\model01.jpeg
 ------------------------------------------------------------------------------------------------*/
 int speed = 100;  // начальная скорость моторов
 int latency = 1000;  // задержка перед проверкой
@@ -15,10 +16,10 @@ task main()
 		if (getDistanceValue(distanceSensor) > distance)  // если расстояние более переменной дистанции
 		{
 			speed = 100;  // держим скорость
-			latency = 1000; // периодичность измерения
+			latency = 200; // периодичность измерения
 			} else {
 			speed = 10;  //замедляемся
-			latency = 200; // чаще проверка
+			latency = 100; // чаще проверка
 		}
 
 		sleep(latency);
