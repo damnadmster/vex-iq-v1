@@ -13,7 +13,8 @@ download [RobotC Application](https://www.robotc.net/files/download/vex/ROBOTCfo
 model robot: images\model01.jpeg
 
  - движение вперед
- -  
+ -
+   
 
 
 
